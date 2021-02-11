@@ -1,0 +1,26 @@
+$collumns_number: 10;
+$column_gutter-space: 10px;
+
+// @function getColumnWidth($totalColumns, $targetColumnNumber, $gutter) {
+//   @return;
+// }
+.box {
+  border: solid 1px red;
+  padding: 10px 0;
+}
+
+.row {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: $column_gutter-space;
+  &:not(:last-of-type) {
+    margin-bottom: $column_gutter-space;
+  }
+  grid-template-columns: repeat($collumns_number, 1fr);
+  @for $index from 1 through $collumns_number {
+    .row__column-#{$index} {
+      grid-column: span #{$index};
+      border: solid 1px red;
+    }
+  }
+}

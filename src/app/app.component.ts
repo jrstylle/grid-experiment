@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sass-studies';
+  public linha_um: number[] = new Array(10).fill(0);
+  public linha_dois: number[] = new Array(5).fill(0);
 }
